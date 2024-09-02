@@ -18,18 +18,18 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var stock in Model.liststock)
+        @foreach (var item in Model.liststock)
         {
             <tr>
-                <td>@stock.itemid</td>
-                <td>@stock.item</td>
-                <td>@stock.storeid</td>
-                <td>@stock.supplier</td>
-                <td>@stock.amount</td>
-                <td>@stock.create_at</td>
+                <td>@item.itemid</td>
+                <td>@item.item</td>
+                <td>@item.storeid</td>
+                <td>@item.supplier</td>
+                <td>@item.amount</td>
+                <td>@item.create_at</td>
                 <td>
-                    <a class="btn btn-primary btn-sm" href="/Rangsit/EditRangsit?itemid@itemid.itemid">Edit</a>
-                    <a class="btn btn-primary btn-sm" href="/Rangsit/DeleteRangsit?itemid@itemid.itemid">Delete</a>
+                    <a class="btn btn-primary btn-sm" href="/Rangsit/EditRangsit?itemid=@item.itemid">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/Rangsit/DeleteRangsit?itemid=@item.itemid">Delete</a>
 
                 </td>
             </tr>
