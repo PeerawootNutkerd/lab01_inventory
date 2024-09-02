@@ -1,0 +1,56 @@
+﻿@page
+@model lab01.Pages.Siam.CreatSiamModel
+@{
+}
+
+<br />
+<h2>New Item</h2>
+
+<form method="post">
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Item</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="item" value="@Model.stockInfo.item" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">StoreID</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="item" value="@Model.stockInfo.storeid" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Supplier</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="supplier" value="@Model.stockInfo.supplier">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Amount</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="amount" value="@Model.stockInfo.amount">
+		</div>
+	</div>
+
+	@if (Model.successMassage.Length>0)
+	{
+		<div class="roww mb-3">
+			<div class="col-sm-9">
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<strong>@Model.successMassage</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			</div>
+		</div>
+	}
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">submit</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/Siam/IndexSiam" role="button">Cancel</a>
+		</div>
+	</div>
+</form>
+

@@ -1,0 +1,38 @@
+﻿@page
+@model lab01.Pages.Rangsit.IndexRangsitModel
+@{
+}
+
+<a class="btn btn-primary btn-sm" href="/Rangsit/CreateRangsit">New item</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ItemId</th>
+            <th>Item</th>
+            <th>StoreId</th>
+            <th>Supplier</th>
+            <th>Amount</th>
+            <th>Created At</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stock in Model.liststock)
+        {
+            <tr>
+                <td>@stock.itemid</td>
+                <td>@stock.item</td>
+                <td>@stock.storeid</td>
+                <td>@stock.supplier</td>
+                <td>@stock.amount</td>
+                <td>@stock.create_at</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Rangsit/EditRangsit?itemid@itemid.itemid">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/Rangsit/DeleteRangsit?itemid@itemid.itemid">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
